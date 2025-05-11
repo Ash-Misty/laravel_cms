@@ -508,7 +508,7 @@
       <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
 
         <circle cx="100" cy="100" r="80" stroke="red" stroke-width="4" fill="white" />
-        
+
         <image href="/Asserts/pllogo.png" x="50" y="50" height="100" width="100" />
       </svg>
     </div>
@@ -586,43 +586,76 @@
   <div class="container mx-auto px-4">
     <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-10 drop-shadow-xl">Beyond Classroom</h2>
 
-    <div id="cardCarousel" class="relative w-full max-w-md mx-auto text-center">
+    <div id="cardCarousel" class="relative w-full max-w-md mx-auto text-center overflow-hidden">
 
-      <!-- Card 1 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/lib.jpeg" alt="Library" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">Library</p>
-      </div>
+      <!-- Carousel Container -->
+      <div class="flex transition-transform duration-500 ease-in-out" id="carouselInner">
+        <!-- Card 1 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/lib.jpeg" alt="Library" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">Library</p>
+        </div>
 
-      <!-- Card 2 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/nss.jpeg" alt="NSS" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">NSS</p>
-      </div>
+        <!-- Card 2 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/nss.jpeg" alt="NSS" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">NSS</p>
+        </div>
 
-      <!-- Card 3 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/ncc.png" alt="NCC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">NCC</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/yrcc.avif" alt="YRC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">YRC</p>
-      </div>
-      <!-- Card 5 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/sports.avif" alt="sports" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">Sports</p>
-      </div>
-      <!-- Card 5 -->
-      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-        <img src="./Asserts/rag.png" alt="anti ragging" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-        <p class="text-xl font-semibold text-gray-800">Anti-Ragging</p>
+        <!-- Card 3 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/ncc.png" alt="NCC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">NCC</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/yrcc.avif" alt="YRC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">YRC</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/sports.avif" alt="Sports" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">Sports</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+          <img src="./Asserts/rag.png" alt="Anti-Ragging" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+          <p class="text-xl font-semibold text-gray-800">Anti-Ragging</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Tailwind JS from CDN for utility -->
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+
+<script>
+  let currentIndex = 0;
+  const cards = document.querySelectorAll('#carouselInner .carousel-card');
+  const totalCards = cards.length;
+  const carouselInner = document.getElementById('carouselInner');
+
+  // Function to move the carousel automatically
+  function moveCarousel() {
+    currentIndex = (currentIndex + 1) % totalCards; // Loop to the first card after the last one
+    updateCarouselPosition();
+  }
+
+  // Function to update the carousel position
+  function updateCarouselPosition() {
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`; // Move the carousel to the correct position
+  }
+
+  // Automatically move the carousel every 3 seconds
+  setInterval(moveCarousel, 3000); // Change every 3 seconds (3000 ms)
+</script>
+
+
 </body>
 
 <footer class="bg-black text-white py-10 mt-10">

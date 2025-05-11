@@ -104,7 +104,7 @@
     .lab-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; 
+      object-fit: cover;
       border-radius: 8px;
     }
     footer {
@@ -152,7 +152,7 @@
   <h2>Head of the Department</h2>
   <div class="contact">
     <div class="hod-info">
-      <img src="/Asserts/pharmahod" alt="Dr. P. Selvamani" class="hod-img"/>
+      <img src="/Asserts/spharmahod.jpg" alt="Dr. P. Selvamani" class="hod-img"/>
       <div>
         <p><strong>Dr. P. Selvamani</strong></p>
         <p>PhD in Pharmaceutical Sciences</p>
