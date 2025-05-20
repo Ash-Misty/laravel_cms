@@ -156,7 +156,7 @@
       <div>
         <p><strong>Dr. P. Selvamani</strong></p>
         <p>PhD in Pharmaceutical Sciences</p>
-        <p>Email: selva@pharmauniv.edu</p>
+        <p>Email: selva@gmail.com</p>
         <p>Phone: +91-98765-43210</p>
       </div>
     </div>

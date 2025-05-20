@@ -97,7 +97,7 @@
       <h3>Dr.R.Kanimozhi</h3>
       <p>Professor & Head of the Department</p>
       <p>Expertise: High Voltage Engineering, Power Systems</p>
-      <p>email: kani@anauni@gmail.com</p>
+      <p>email: kani@gmail.com</p>
     </div>
   </div>
 
@@ -110,7 +110,7 @@
       <h3>Dr.M.Balasingh Moses</h3>
       <p>Associate Professor</p>
       <p>Expertise: Power Electronics, Control Systems</p>
-      <p>Email: bama@anaunigamil.com</p>
+      <p>Email: bala@gamil.com</p>
     </div>
   </div>
 
@@ -120,7 +120,7 @@
       <h3>Mr.M.Karthikeyan</h3>
       <p>Assistant Professor</p>
       <p>Expertise: Embedded Systems, IoT</p>
-      <p>Email: Karthi@anaunigmail.com</p>
+      <p>Email: Karthi@gmail.com</p>
     </div>
   </div>
 
@@ -130,7 +130,7 @@
       <h3>Ms.S.Rajalakshmi</h3>
       <p>Assistant Professor</p>
       <p>Expertise: Electrical Machines, Smart Grid</p>
-      <p>Email: raja@anaunigmail.com</p>
+      <p>Email: raja@gmail.com</p>
     </div>
   </div>
 
@@ -140,7 +140,7 @@
       <h3>Mr.K.Rajesh</h3>
       <p>Assistant Professor</p>
       <p>Expertise: Renewable Energy Systems</p>
-      <p>Email: raju@anaunigmail.com</p>
+      <p>Email: raju@gmail.com</p>
     </div>
   </div>
 
@@ -150,7 +150,7 @@
       <h3>Dr.P.Vijayarajan</h3>
       <p>Assistant Professor</p>
       <p>Expertise: Electric Drives, Control Engineering</p>
-      <p>Email: viji@anaunigmail.com</p>
+      <p>Email: viji@gmail.com</p>
     </div>
   </div>
 

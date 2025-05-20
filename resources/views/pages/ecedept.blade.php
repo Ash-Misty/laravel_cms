@@ -130,7 +130,7 @@
     <div style="text-align: center;">
         <img src="Asserts/ecehod.png" alt="Head of Department" style="width: 200px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
     </div>
-    <p>Mrs.P.Ramadevi is the current Head of the Department of Electrical and Electronics Engineering. With over [X] years of experience in teaching and research, Dr. [HOD Name] has significantly contributed to the development of the department.</p>
+    <p>Mrs.P.Ramadevi is the current Head of the Department of Electrical and Electronics Engineering. With over 15 years of experience in teaching and research, Dr. Ramadevi has significantly contributed to the development of the department.</p>
 </section>
 
 <section id="staff">

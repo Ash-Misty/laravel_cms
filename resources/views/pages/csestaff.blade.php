@@ -31,8 +31,8 @@
     <img src="../Asserts/csehod.jpeg" alt="Dr. Annapoorani" class="rounded-circle border mb-4">
     <h2 class="text-2xl font-bold text-blue-900 mb-1">Dr. G. Annapoorani</h2>
     <p class="text-blue-700 mb-2">Head of Department (HOD)</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> HOD001</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> poorani@example.com</p>
+
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> poorani@gamil.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-456-7890</p>
   </div>
 </section>
@@ -46,7 +46,7 @@
     <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. R. Arunprakash</h3>
     <p class="text-gray-600 mb-2">Assistant Professor (Sr.Grade)</p>
     <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST002</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> arun@example.com</p>
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> arun@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-555-6789</p>
   </div>
 
@@ -55,8 +55,7 @@
     <img src="/Asserts/senthil.jpeg" alt="Senthilkumar" class="rounded-circle mb-3">
     <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. S. Senthilkumar</h3>
     <p class="text-gray-600 mb-2">Research Assistant</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST003</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> senthil@example.com</p>
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> senthil@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-999-1234</p>
   </div>
 
@@ -65,8 +64,7 @@
     <img src="/Asserts/abi.jpeg" alt="Abirama" class="rounded-circle mb-3">
     <h3 class="text-xl font-bold text-gray-800 mb-1">P. Abirama Sundari</h3>
     <p class="text-gray-600 mb-2">Administrator</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST004</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> abi@example.com</p>
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> abi@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-777-4567</p>
   </div>
 
@@ -75,8 +73,7 @@
     <img src="/Asserts/latha.jpeg" alt="Latha" class="rounded-circle mb-3">
     <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. K. Latha</h3>
     <p class="text-gray-600 mb-2">Assistant Professor (Sr.Grade)</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST005</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> latha@example.com</p>
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> latha@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-777-4567</p>
   </div>
 
@@ -85,8 +82,7 @@
     <img src="/Asserts/jaya.jpeg" alt="Jayamala" class="rounded-circle mb-3">
     <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. R. Jayamala</h3>
     <p class="text-gray-600 mb-2">Assistant Professor (Sr.Grade)</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST006</p>
-    <p class="text-gray-700 mb-1"><strong>Email:</strong> jaya@example.com</p>
+    <p class="text-gray-700 mb-1"><strong>Email:</strong> jaya@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-777-4567</p>
   </div>
 

@@ -123,7 +123,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        
+
         .lab-section .row {
             display: flex;
             justify-content: space-between;
@@ -209,7 +209,7 @@
                 <img src="/Asserts/csehod.jpeg" alt="HOD photo" class="rounded-full w-36 h-36 object-cover shadow-lg">
                 <div class="text-left">
                     <h4 class="text-xl font-semibold">Dr.G.Annapoorani</h4>
-                    <p class="text-gray-700 mt-2">University College of Engineering, IT Department,<br>Anna University,Trichy 620024<br>Email: <a href="mailto:r.poorani@annauniv.edu" class="text-blue-600">poorani@annauniv.edu</a></p>
+                    <p class="text-gray-700 mt-2">University College of Engineering, IT Department,<br>Anna University,Trichy 620024<br>Email: <a href="mailto:r.poorani@annauniv.edu" class="text-blue-600">poorani@gmail.com</a></p>
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@
           <div class="card-body">
             <h5 class="card-title">Dr. G. Annaporani</h5>
             <p class="card-text">Head of Department</p>
-            <p class="text-muted">Email: poorani@aubit.edu.in</p>
+            <p class="text-muted">Email: poorani@gmail.com</p>
             <p class="text-muted">Phone: +91-9876543210</p>
           </div>
         </div>
@@ -83,7 +83,7 @@
           <div class="card-body">
             <h5 class="card-title">Dr. M. Padma</h5>
             <p class="card-text">Assistant Professor</p>
-            <p class="text-muted">Email: padma@aubit.edu.in</p>
+            <p class="text-muted">Email: padma@gmail.com</p>
             <p class="text-muted">Phone: +91-9876504321</p>
           </div>
         </div>
@@ -96,7 +96,7 @@
           <div class="card-body">
             <h5 class="card-title">Dr.Blessy Selvam</h5>
             <p class="card-text">Lab Instructor</p>
-            <p class="text-muted">Email: blessy@aubit.edu.in</p>
+            <p class="text-muted">Email: blessy@gmail.com</p>
             <p class="text-muted">Phone: +91-9876512345</p>
           </div>
         </div>
@@ -109,7 +109,7 @@
           <div class="card-body">
             <h5 class="card-title">Mr.M. Krishna Kumar</h5>
             <p class="card-text">Assistant Professor</p>
-            <p class="text-muted">Email: krishna@aubit.edu.in</p>
+            <p class="text-muted">Email: krishna@gmail.com</p>
             <p class="text-muted">Phone: +91-9876523456</p>
           </div>
         </div>
@@ -122,7 +122,7 @@
           <div class="card-body">
             <h5 class="card-title">Mrs.L. Vanitha</h5>
             <p class="card-text">Teaching Assistant</p>
-            <p class="text-muted">Email: vanitha@aubit.edu.in</p>
+            <p class="text-muted">Email: vanitha@gmail.com</p>
             <p class="text-muted">Phone: +91-9876534567</p>
           </div>
         </div>
@@ -135,7 +135,7 @@
           <div class="card-body">
             <h5 class="card-title">Mr. M. Prasannakumar</h5>
             <p class="card-text">Programmer</p>
-            <p class="text-muted">Email: prasana@aubit.edu.in</p>
+            <p class="text-muted">Email: prasana@gmail.com</p>
             <p class="text-muted">Phone: +91-9876545678</p>
           </div>
         </div>

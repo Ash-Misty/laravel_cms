@@ -88,7 +88,7 @@
     <h3>Dr. P. Selvamani</h3>
     <p><strong>Designation:</strong> Professor & Head</p>
     <p><strong>Qualification:</strong> PhD in Pharmaceutical Sciences</p>
-    <p><strong>Email:</strong> selva@pharmauniv.edu</p>
+    <p><strong>Email:</strong> selva@gmail.com</p>
   </div>
 
   <h2>Other Faculty Members</h2>
@@ -98,7 +98,7 @@
       <h3>Mr. Karthikeyan</h3>
       <p><strong>Designation:</strong> Assistant Professor</p>
       <p><strong>Qualification:</strong> M.Pharm (Pharmacology)</p>
-      <p><strong>Email:</strong> karthik@pharmauniv.edu</p>
+      <p><strong>Email:</strong> karthik@gmail.com</p>
     </div>
 
     <div class="staff-card">
@@ -106,7 +106,7 @@
       <h3>Ms. Kanimozhi</h3>
       <p><strong>Designation:</strong> Assistant Professor</p>
       <p><strong>Qualification:</strong> M.Pharm (Pharmaceutics)</p>
-      <p><strong>Email:</strong> kani@pharmauniv.edu</p>
+      <p><strong>Email:</strong> kanimozhi@gmail.com</p>
     </div>
 
     <div class="staff-card">
@@ -114,7 +114,7 @@
       <h3>Mrs. Shanmugapriya</h3>
       <p><strong>Designation:</strong> Lecturer</p>
       <p><strong>Qualification:</strong> B.Pharm</p>
-      <p><strong>Email:</strong> san@pharmauniv.edu</p>
+      <p><strong>Email:</strong> san@gmail.com</p>
     </div>
 
     <div class="staff-card">
@@ -122,7 +122,7 @@
       <h3>Dr. Usharani</h3>
       <p><strong>Designation:</strong> Assistant Professor</p>
       <p><strong>Qualification:</strong> PhD in Pharmacognosy</p>
-      <p><strong>Email:</strong> usha@pharmauniv.edu</p>
+      <p><strong>Email:</strong> usha@gmail.com</p>
     </div>
 
     <div class="staff-card">
@@ -130,7 +130,7 @@
       <h3>Mrs. Uma Maheshwari</h3>
       <p><strong>Designation:</strong> Teaching Assistant</p>
       <p><strong>Qualification:</strong> M.Pharm (Pharmaceutical Chemistry)</p>
-      <p><strong>Email:</strong> uma@pharmauniv.edu</p>
+      <p><strong>Email:</strong> uma@gmail.com</p>
     </div>
   </div>
 </div>

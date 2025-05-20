@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SeminarController;
 
 Route::get('/', function () {
     return view('landing');
@@ -62,3 +64,20 @@ Route::get('/pharmadept', function () {
 Route::get('/pharmastaff', function () {
     return view('pages.pharmastaff');
 });
+Route::get('/login', [AuthController::class, 'showLogin'])
+     ->middleware('guest')     // keep signed-in users out
+     ->name('login');          // route('login') helper will point here
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/logout', [AuthController::class, 'logout']);
+
+// Seminar routes
+Route::get('/seminar', [SeminarController::class, 'index']);
+
+
+Route::get('/seminar/create', [SeminarController::class, 'create']);
+Route::post('/seminar/store', [SeminarController::class, 'store']);
+Route::get('/seminarall', [SeminarController::class, 'display'])->name('seminarall');
+
+Route::get('/', [AuthController::class, 'showLanding'])->name('landing');

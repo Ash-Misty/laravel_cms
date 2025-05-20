@@ -65,7 +65,7 @@
         <p class=""><br>University College of Engineering BIT Campus,<br>
           Anna University,<br>
           Tiruchirappalli-620024. <br>
-          Email: <a class="text-decoration-none text-black" href="mailto:pooranikrish@gmail.com">pooranikrish@gmail.com</a></p>
+          Email: <a class="text-decoration-none text-black" href="mailto:pooranikrish@gmail.com">poorani@gmail.com</a></p>
         </div>
       </div>
       <div class="text-center px-3">
@@ -106,7 +106,7 @@
         </div>
       </div>
     </section>
-    
+
   <footer class="bg-primary text-white text-center py-10 mt-5">
     <div class="container">
       &copy;Department of Computer Science and Engineering. <b>UCE - BIT CAMPUS, TRICHY.</b> All rights are received.

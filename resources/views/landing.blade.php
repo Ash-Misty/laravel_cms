@@ -9,20 +9,40 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&family=Grechen+Fuemen&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sigmar&family=Staatliches&display=swap" rel="stylesheet">  <!-- Bootstrap CSS -->  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&family=Grechen+Fuemen&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sigmar&family=Staatliches&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-   <!-- Tailwind CSS -->  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+   <!-- Tailwind CSS -->
+   <script src="https://cdn.tailwindcss.com"></script>
    <!-- Animate.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- AOS Library -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- Tailwind JS from CDN for utility -->
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+<!-- Style tweak for black controls -->
+
+<!-- One—and only one—Bootstrap JS include -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
   <style>
     html {
       scroll-behavior: smooth;
     }
+
+  #seminarCarousel .carousel-control-prev-icon,
+  #seminarCarousel .carousel-control-next-icon {
+        filter: invert(100%);}
+
+
 
     .nav-link-gradient {
       position: relative;
@@ -132,6 +152,45 @@
     .pink-filter {
       filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
     }
+    .aspect-4x5 {
+      position: relative;
+      width: 100%;
+      padding-top: 125%;
+    }
+    .aspect-4x5 > img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 0.375rem 0.375rem 0 0;
+    }
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  z-index: 1;
+}
+
+
 
   </style>
 </head>
@@ -297,133 +356,92 @@
 </section>
 
 
-<!-- Carousel Section with Title -->
-<section id="carousel-section" class="py-5">
+<!-- Seminar Updates – auto-cycling version -->
+<section id="carousel-section" class="py-5" style="background-color:#f0f8ff;">
   <div class="container text-center mb-5">
-    <h2 class="text-4xl font-extrabold text-indigo-800 mb-5 animate__animated animate__fadeInDown shadow-md tracking-wide">
+    <h2 class="text-primary mb-5 fw-bold" style="font-size:2rem; text-shadow:0 1px 3px rgba(0,0,0,0.1);">
       Seminar Updates
     </h2>
-  </div>
 
-  <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide carousel-fade w-full max-w-xl mx-auto" data-bs-ride="carousel" data-bs-interval="4000">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+    @if($seminars->count())
+      <div id="seminarCarousel"
+           class="carousel slide carousel-fade mx-auto shadow-lg rounded-4 overflow-hidden"
+           style="max-width:260px;"
+           data-bs-ride="carousel"
+           data-bs-interval="4000"
+           data-bs-pause="false">
 
-    <!-- Inner Carousel -->
-    <div class="carousel-inner rounded-2xl overflow-hidden shadow-lg">
-      <!-- Carousel Item 1 -->
-      <div class="carousel-item active">
-        <img src="/Asserts/pp1.jpeg" class="d-block w-100 h-64 object-cover" alt="Dept 1">
-        <div class="carousel-caption d-block bg-black bg-opacity-50 rounded p-3">
-          <h5 class="text-xl font-semibold text-white">CSE SYMPO</h5>
-          <p class="text-sm text-white">
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              MAY 3, 2025
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              11:00 AM
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 12l4.243-4.243M6.343 7.757L10.586 12 6.343 16.243" />
-              </svg>
-              C BLOCK
-            </span>
-          </p>
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          @foreach($seminars as $i => $seminar)
+            <button type="button"
+                    data-bs-target="#seminarCarousel"
+                    data-bs-slide-to="{{ $i }}"
+                    class="{{ $i === 0 ? 'active' : '' }}"
+                    aria-label="Slide {{ $i + 1 }}"></button>
+          @endforeach
         </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner bg-light">
+          @foreach($seminars as $i => $seminar)
+            <div class="carousel-item {{ $i === 0 ? 'active' : '' }}" style="transition:opacity 1s cubic-bezier(0.4, 0, 0.2, 1);">
+              <div class="ratio ratio-4x5" style="min-height: 300px; background-color: #e6f0ff;">
+                <img src="{{ asset('storage/' . $seminar->image) }}"
+                     alt="{{ $seminar->title }}"
+                     class="d-block w-100 h-100 object-fit-cover"
+                     loading="lazy"
+                     onerror="this.style.display='none';">
+              </div>
+              <div class="p-3 bg-light border-top">
+                 <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ $seminar->topic }}</h3>
+
+                <ul class="list-unstyled small mb-0 text-start text-dark">
+
+                  <li class="d-flex align-items-center mb-2">
+                    <i class="bi bi-calendar-event me-2 text-primary"></i>
+                    {{ \Carbon\Carbon::parse($seminar->date)->format('d M Y') }}
+                  </li>
+                  <li class="d-flex align-items-center mb-2">
+                    <i class="bi bi-clock me-2 text-primary"></i>
+                    {{ \Carbon\Carbon::parse($seminar->time)->format('h:i A') }}
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-geo-alt me-2 text-primary"></i>
+                    {{ $seminar->venue }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          @endforeach
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#seminarCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#seminarCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <!-- Carousel Item 2 -->
-      <div class="carousel-item">
-        <img src="/Asserts/pp2.jpeg" class="d-block w-100 h-64 object-cover" alt="Dept 2">
-        <div class="carousel-caption d-block bg-black bg-opacity-50 rounded p-3">
-          <h5 class="text-xl font-semibold text-white">EEE Expo</h5>
-          <p class="text-sm text-white">
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              April 28, 2025
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              1:00 PM
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 12l4.243-4.243M6.343 7.757L10.586 12 6.343 16.243" />
-              </svg>
-              Lab Block Hall B
-            </span>
-          </p>
-        </div>
+      <!-- CTA Buttons -->
+      <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+        <a href="{{ route('seminarall') }}" class="btn btn-outline-primary fw-semibold px-4 shadow-sm rounded-pill">
+          View All Seminars
+        </a>
+        <a href="{{ route('login') }}" class="btn btn-primary fw-semibold px-4 shadow-sm rounded-pill">
+          Register Now
+        </a>
       </div>
-
-      <!-- Carousel Item 3 -->
-      <div class="carousel-item">
-        <img src="/Asserts/pp3.jpeg" class="d-block w-100 h-64 object-cover" alt="Dept 3">
-        <div class="carousel-caption d-block bg-black bg-opacity-50 rounded p-3">
-          <h5 class="text-xl font-semibold text-white">ECE Workshop</h5>
-          <p class="text-sm text-white">
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              April 29, 2025
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              2:00 PM
-            </span>
-            <span class="flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 12l4.243-4.243M6.343 7.757L10.586 12 6.343 16.243" />
-              </svg>
-              Workshop Arena
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    @else
+      <div class="alert alert-info mx-auto" style="max-width: 260px;">No upcoming seminars currently scheduled</div>
+    @endif
   </div>
 </section>
-
-
-  <hr>
+<hr>
 
 <!-- Achievements Section -->
 <section class="py-16 bg-gradient-to-r from-purple-100 via-blue-100 to-pink-100">
@@ -434,25 +452,20 @@
 
     <div class="relative overflow-hidden rounded-3xl shadow-lg h-[400px] max-w-4xl mx-auto">
       <div id="achievements-carousel" class="h-full w-full relative">
-        <img src="./Asserts/ac1.jpeg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 1">
-        <img src="./Asserts/ac2.jpeg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 2">
-        <img src="./Asserts/ac3.jpeg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 3">
-        <img src="./Asserts/ac4.jpeg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 4">
-        <img src="./Asserts/ac5.jpeg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 5">
+        <img src="./Asserts/ac1.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 1">
+        <img src="./Asserts/ac2.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 2">
+        <img src="./Asserts/ac3.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 3">
+        <img src="./Asserts/ac4.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 4">
+        <img src="./Asserts/ac5.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 5">
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
 <hr>
 
 
-      <!-- Achievements Cards -->
-      <section class="py-12 bg-gray-50 overflow-visible">
+<!-- Achievements Cards -->
+<section class="py-12 bg-gray-50 overflow-visible">
   <div class="container mx-auto px-4">
     <div class="row g-4">
       <!-- Card 1 -->
@@ -582,80 +595,66 @@
        </div>
   </div>
 </section>
+
 <section class="py-12 bg-gradient-to-r from-indigo-200 via-purple-100 to-pink-200">
   <div class="container mx-auto px-4">
     <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-10 drop-shadow-xl">Beyond Classroom</h2>
 
-    <div id="cardCarousel" class="relative w-full max-w-md mx-auto text-center overflow-hidden">
+    <div id="cardCarousel" class="relative w-full max-w-md mx-auto text-center">
+      <!-- Card 1 -->
+      <div class="carousel-card" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/lib.jpeg" alt="Library" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">Library</p>
+      </div>
 
-      <!-- Carousel Container -->
-      <div class="flex transition-transform duration-500 ease-in-out" id="carouselInner">
-        <!-- Card 1 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/lib.jpeg" alt="Library" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">Library</p>
-        </div>
+      <!-- Card 2 -->
+      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/nss.jpeg" alt="NSS" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">NSS</p>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/nss.jpeg" alt="NSS" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">NSS</p>
-        </div>
+      <!-- Card 3 -->
+      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/ncc.png" alt="NCC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">NCC</p>
+      </div>
 
-        <!-- Card 3 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/ncc.png" alt="NCC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">NCC</p>
-        </div>
+      <!-- Card 4 -->
+      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/yrcc.avif" alt="YRC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">YRC</p>
+      </div>
 
-        <!-- Card 4 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/yrcc.avif" alt="YRC" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">YRC</p>
-        </div>
+      <!-- Card 5 -->
+      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/sports.avif" alt="sports" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">Sports</p>
+      </div>
 
-        <!-- Card 5 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/sports.avif" alt="Sports" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">Sports</p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="carousel-card flex-shrink-0 w-full mx-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
-          <img src="./Asserts/rag.png" alt="Anti-Ragging" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
-          <p class="text-xl font-semibold text-gray-800">Anti-Ragging</p>
-        </div>
+      <!-- Card 6 -->
+      <div class="carousel-card hidden" style="clip-path: polygon(30% 0%, 70% 0%, 100% 25%, 100% 75%, 70% 100%, 30% 100%, 0% 75%, 0% 25%)">
+        <img src="./Asserts/rag.png" alt="anti ragging" class="mx-auto mb-4 w-40 h-40 object-cover rounded-full shadow-md">
+        <p class="text-xl font-semibold text-gray-800">Anti-Ragging</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Tailwind JS from CDN for utility -->
-<script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
-
 <script>
-  let currentIndex = 0;
-  const cards = document.querySelectorAll('#carouselInner .carousel-card');
-  const totalCards = cards.length;
-  const carouselInner = document.getElementById('carouselInner');
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCard = 0;
+  const cards = document.querySelectorAll('.carousel-card');
 
-  // Function to move the carousel automatically
-  function moveCarousel() {
-    currentIndex = (currentIndex + 1) % totalCards; // Loop to the first card after the last one
-    updateCarouselPosition();
+  function rotateCards() {
+    cards.forEach(card => card.classList.add('hidden'));
+    cards[currentCard].classList.remove('hidden');
+    currentCard = (currentCard + 1) % cards.length;
   }
 
-  // Function to update the carousel position
-  function updateCarouselPosition() {
-    const offset = -currentIndex * 100;
-    carouselInner.style.transform = `translateX(${offset}%)`; // Move the carousel to the correct position
-  }
-
-  // Automatically move the carousel every 3 seconds
-  setInterval(moveCarousel, 3000); // Change every 3 seconds (3000 ms)
+  // Start rotation every 3 seconds
+  setInterval(rotateCards, 3000);
+});
 </script>
-
-
 </body>
 
 <footer class="bg-black text-white py-10 mt-10">
@@ -664,7 +663,7 @@
       <!-- Logo -->
       <img class="mx-auto mb-6 w-24 h-auto" src="./Asserts/logo1.jpg" alt="AUBIT Logo">
 
-      <!-- Institute Name and Address -->
+      <!--  Name and Address -->
       <h4 class="text-white text-xl font-semibold mb-2">Anna University BIT Campus</h4>
       <p class="text-gray-400 mb-4">Tiruchirappalli, Tamil Nadu, India - 620024</p>
 
@@ -732,6 +731,7 @@
     }, 3000);
   });
 </script>
+
 
 
 
