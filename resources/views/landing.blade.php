@@ -26,9 +26,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <!-- Tailwind JS from CDN for utility -->
 <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
-<!-- Style tweak for black controls -->
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<!-- One—and only one—Bootstrap JS include -->
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -38,11 +40,7 @@
       scroll-behavior: smooth;
     }
 
-
-
-
-
-    .nav-link-gradient {
+.nav-link-gradient {
       position: relative;
       font-weight: 600;
       background: linear-gradient(90deg, #007cf0, #00dfd8);
@@ -150,20 +148,37 @@
     .pink-filter {
       filter: hue-rotate(-20deg) saturate(1.2) brightness(1.05);
     }
-    .aspect-4x5 {
-      position: relative;
-      width: 100%;
-      padding-top: 125%;
-    }
-    .aspect-4x5 > img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 0.375rem 0.375rem 0 0;
-    }
+    .ratio-4x5 {
+  position: relative;
+  width: 100%;
+  padding-top: 125%; /* 4:5 aspect ratio */
+  background-color: #e6f0ff;
+  overflow: hidden;
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.ratio-4x5 > img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  display: block;
+}
+
+   .seminar-swiper {
+  max-width: 85%;  /*  overall carousel width */
+  margin: 0 auto;
+}
+
+.seminar-swiper .swiper-slide .card {
+  max-width: 320px;
+  max-width: 300px;  /* card size*/
+  margin: 0 auto;
+}
+
 
 .carousel-fade .carousel-item {
   opacity: 0;
@@ -187,10 +202,7 @@
   opacity: 1;
   z-index: 1;
 }
-
-
-
-  </style>
+</style>
 </head>
 <body>
   <div class="container-fluid p-0">
@@ -199,7 +211,7 @@
         <div class="d-flex align-items-center">
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img src="/Asserts/logo.avif" alt="Logo of AUBIT" width="60" height="60" class="me-2">
-            <span class="fs-5 fw-bold text-dark">AUBIT</span>
+            <span class="fs-3 fw-bold text-dark mt-1.5">University College Of Engineering,BIT CAMPUS, Trichy  </span>
           </a>
         </div>
         <ul class="nav">
@@ -361,70 +373,46 @@
     </h2>
 
     @if($seminars->count())
-      <div id="seminarCarousel"
-           class="carousel slide carousel-fade mx-auto shadow-lg rounded-4 overflow-hidden"
-           style="max-width:260px;"
-           data-bs-ride="carousel"
-           data-bs-interval="4000"
-           data-bs-pause="false">
-
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          @foreach($seminars as $i => $seminar)
-            <button type="button"
-                    data-bs-target="#seminarCarousel"
-                    data-bs-slide-to="{{ $i }}"
-                    class="{{ $i === 0 ? 'active' : '' }}"
-                    aria-label="Slide {{ $i + 1 }}"></button>
-          @endforeach
-        </div>
-
-        <!-- Slides -->
-        <div class="carousel-inner bg-light">
-          @foreach($seminars as $i => $seminar)
-            <div class="carousel-item {{ $i === 0 ? 'active' : '' }}" style="transition:opacity 1s cubic-bezier(0.4, 0, 0.2, 1);">
-              <div class="ratio ratio-4x5" style="min-height: 300px; background-color: #e6f0ff;">
-                <img src="{{ asset('storage/' . $seminar->image) }}"
-                     alt="{{ $seminar->title }}"
-                     class="d-block w-100 h-100 object-fit-cover"
-                     loading="lazy"
-                     onerror="this.style.display='none';">
-              </div>
-              <div class="p-3 bg-light border-top">
-                 <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ $seminar->topic }}</h3>
-
-                <ul class="list-unstyled small mb-0 text-start text-dark">
-
-                  <li class="d-flex align-items-center mb-2">
-                    <i class="bi bi-calendar-event me-2 text-primary"></i>
-                    {{ \Carbon\Carbon::parse($seminar->date)->format('d M Y') }}
-                  </li>
-                  <li class="d-flex align-items-center mb-2">
-                    <i class="bi bi-clock me-2 text-primary"></i>
-                    {{ \Carbon\Carbon::parse($seminar->time)->format('h:i A') }}
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <i class="bi bi-geo-alt me-2 text-primary"></i>
-                    {{ $seminar->venue }}
-                  </li>
-                </ul>
+      <div class="swiper seminar-swiper">
+        <div class="swiper-wrapper">
+          @foreach($seminars as $seminar)
+            <div class="swiper-slide">
+              <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
+                <div class="ratio ratio-4x5" style="background-color: #e6f0ff;">
+                  <img src="{{ asset('storage/' . $seminar->image) }}"
+                       alt="{{ $seminar->title }}"
+                       class="w-100 h-100 object-fit-cover"
+                       loading="lazy"
+                       onerror="this.style.display='none';">
+                </div>
+                <div class="card-body text-start bg-light">
+                  <h5 class="fw-semibold mb-2">{{ $seminar->topic }}</h5>
+                  <ul class="list-unstyled small mb-0 text-dark">
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="bi bi-calendar-event me-2 text-primary"></i>
+                      {{ \Carbon\Carbon::parse($seminar->date)->format('d M Y') }}
+                    </li>
+                    <li class="d-flex align-items-center mb-2">
+                      <i class="bi bi-clock me-2 text-primary"></i>
+                      {{ \Carbon\Carbon::parse($seminar->time)->format('h:i A') }}
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <i class="bi bi-geo-alt me-2 text-primary"></i>
+                      {{ $seminar->venue }}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           @endforeach
         </div>
 
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#seminarCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#seminarCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <!-- Navigation -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination mt-4"></div>
       </div>
 
-      <!-- CTA Buttons -->
       <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
         <a href="{{ route('seminarall') }}" class="btn btn-outline-primary fw-semibold px-4 shadow-sm rounded-pill">
           View All Seminars
@@ -438,6 +426,44 @@
     @endif
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const delay = window.innerWidth < 768 ? 7000 : 4000;
+
+    new Swiper('.seminar-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: delay,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        992: {
+          slidesPerView: 4,
+        },
+      }
+    });
+  });
+</script>
+
+
+
 <hr>
 
 <!-- Achievements Section -->
@@ -449,18 +475,64 @@
 
     <div class="relative overflow-hidden rounded-3xl shadow-lg h-[400px] max-w-4xl mx-auto">
       <div id="achievements-carousel" class="h-full w-full relative">
-        <img src="./Asserts/ac1.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 1">
-        <img src="./Asserts/ac2.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 2">
-        <img src="./Asserts/ac3.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 3">
-        <img src="./Asserts/ac4.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 4">
-        <img src="./Asserts/ac5.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden" alt="Achievement 5">
+        <!-- Images -->
+        <img src="./Asserts/ac1.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden z-10" alt="Achievement 1" data-index="0">
+        <img src="./Asserts/ac2.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden z-10" alt="Achievement 2" data-index="1">
+        <img src="./Asserts/ac3.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden z-10" alt="Achievement 3" data-index="2">
+        <img src="./Asserts/ac4.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden z-10" alt="Achievement 4" data-index="3">
+        <img src="./Asserts/ac5.jpg" class="carousel-achievements absolute top-0 left-0 w-full h-full object-cover hidden z-10" alt="Achievement 5" data-index="4">
+
+        <!-- Captions -->
+        <div class="absolute bottom-8 left-0 w-full text-center px-4 z-20">
+          <p class="achievement-caption hidden bg-black bg-opacity-60 text-white rounded-md inline-block px-3 py-1" data-index="0">
+            Awarded Best Innovation 2023
+          </p>
+          <p class="achievement-caption hidden bg-black bg-opacity-60 text-white rounded-md inline-block px-3 py-1" data-index="1">
+            Top Performer in Regional Contest
+          </p>
+          <p class="achievement-caption hidden bg-black bg-opacity-60 text-white rounded-md inline-block px-3 py-1" data-index="2">
+            Recognized for Community Service
+          </p>
+          <p class="achievement-caption hidden bg-black bg-opacity-60 text-white rounded-md inline-block px-3 py-1" data-index="3">
+            Winner of Tech Challenge
+          </p>
+          <p class="achievement-caption hidden bg-black bg-opacity-60 text-white rounded-md inline-block px-3 py-1" data-index="4">
+            Best Team Collaboration Award
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.carousel-achievements');
+    const captions = document.querySelectorAll('.achievement-caption');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      images.forEach(img => img.classList.add('hidden'));
+      captions.forEach(cap => cap.classList.add('hidden'));
+
+      images[index].classList.remove('hidden');
+      captions[index].classList.remove('hidden');
+    }
+
+    // Show the first slide immediately after DOM is ready
+    showSlide(currentIndex);
+
+    // Next slide function
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
+
+    // Auto-rotate every 5 seconds
+    setInterval(nextSlide, 5000);
+  });
+</script>
 <hr>
-
-
 <!-- Achievements Cards -->
 <section class="py-12 bg-gray-50 overflow-visible">
   <div class="container mx-auto px-4">
@@ -652,6 +724,9 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(rotateCards, 3000);
 });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
 <footer class="bg-black text-white py-10 mt-10">
@@ -692,8 +767,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.umd.js"></script>
 <script>
   window.addEventListener('load', function () {
@@ -711,7 +784,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
   AOS.init();
 </script>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".carousel-achievements");
@@ -728,8 +800,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
 </script>
-
-
-
-
 </html>

@@ -57,7 +57,7 @@ class AuthController extends Controller
 
         // Encode JWT
         $token = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
-
+        // dd($token);
         // Set cookie with token
         Cookie::queue('jwt_token', $token, 60);
 

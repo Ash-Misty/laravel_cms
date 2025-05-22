@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SeminarController;
 
+
+
 Route::get('/', function () {
     return view('landing');
 });

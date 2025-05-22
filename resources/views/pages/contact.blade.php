@@ -18,13 +18,9 @@
       <p class="lead drop-shadow-sm">Let’s connect! We’re here to support you with any queries.</p>
     </div>
   </section>
-
+<center>
   <!-- Contact Form Section -->
-  <section class="container py-5">
-    <div class="row g-5 align-items-center">
-
-      <!-- Form Card -->
-      <div class="col-lg-6">
+  <div class="col-lg-6">
         <div class="bg-white bg-opacity-90 rounded-4 shadow-lg p-5 animate-fade-in">
           <h2 class="text-2xl font-bold text-indigo-700 mb-4">Get in Touch</h2>
           <form>
@@ -44,7 +40,7 @@
           </form>
         </div>
       </div>
-
+</center>
       <!-- Contact Info + Map -->
       <div class="col-lg-6">
         <div class="mb-4">
