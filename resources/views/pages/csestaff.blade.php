@@ -45,7 +45,6 @@
     <img src="/Asserts/arun.jpeg" alt="Arunprakash" class="rounded-circle mb-3">
     <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. R. Arunprakash</h3>
     <p class="text-gray-600 mb-2">Assistant Professor (Sr.Grade)</p>
-    <p class="text-gray-700 mb-1"><strong>Staff ID:</strong> ST002</p>
     <p class="text-gray-700 mb-1"><strong>Email:</strong> arun@gmail.com</p>
     <p class="text-gray-700"><strong>Phone:</strong> +123-555-6789</p>
   </div>

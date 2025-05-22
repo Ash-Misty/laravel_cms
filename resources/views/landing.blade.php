@@ -38,9 +38,7 @@
       scroll-behavior: smooth;
     }
 
-  #seminarCarousel .carousel-control-prev-icon,
-  #seminarCarousel .carousel-control-next-icon {
-        filter: invert(100%);}
+
 
 
 
@@ -213,20 +211,19 @@
       </header>
     </div>
 
-   <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('Asserts/bg.png') }}');">
-
-  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 flex flex-col items-center justify-center text-white text-center px-4">
-    <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg animate_animated animate_fadeInDown">
+   <section class="relative h-[90vh] bg-cover bg-center" style="background-image: url('/Asserts/bg.png');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 flex flex-col items-center justify-center text-white text-center px-4">
+    <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg animate__animated animate__fadeInDown">
       ANNA UNIVERSITY TRICHY
     </h2>
-    <p class="mt-4 text-lg md:text-xl font-medium animate_animated animate_fadeInUp">
+    <p class="mt-4 text-lg md:text-xl font-medium animate__animated animate__fadeInUp">
       Empowering Minds, Shaping Futures
     </p>
     <a href="/readmore" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300">
       Know More
     </a>
-  </div>
-</section>
+
+  </section>
 
  <!--  About Section -->
    <section id="about">

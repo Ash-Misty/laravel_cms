@@ -15,9 +15,6 @@
       <a href="{{ url('/seminar/create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow">
         Create Seminar
       </a>
-      <a href="{{ url('/seminars') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow">
-        View Seminars
-      </a>
       <a href="{{ url('/logout') }}" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-5 rounded-lg shadow">
         Logout
       </a>
