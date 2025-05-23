@@ -137,7 +137,7 @@
       margin: 0 15px;
     }
 
-    /* ✅ Responsive tweaks */
+    /*Responsive  */
     @media (max-width: 768px) {
       header {
         font-size: 1.5em;
