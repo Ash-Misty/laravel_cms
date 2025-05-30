@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="./Asserts/campusicon.jpg" type="image/jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Campus Life - AUBIT Trichy</title>
   <!-- Bootstrap CSS -->

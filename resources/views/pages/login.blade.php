@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Staff Login</title>
+    <link rel="icon" href="./Asserts/loginicon.jpg" type="image/jpg">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>

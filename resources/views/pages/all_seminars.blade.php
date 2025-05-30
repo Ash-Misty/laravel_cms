@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>All Seminars</title>
+    <link rel="icon" href="./Asserts/seminaricon.jpg" type="image/jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>

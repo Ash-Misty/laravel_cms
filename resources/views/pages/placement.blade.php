@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./Asserts/placementicon.jpg" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUBIT Placement</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -85,7 +86,7 @@
         <section class="section-bg mb-8 p-6">
             <h2 class="text-2xl font-semibold section-title mb-6 text-center">Top Recruiters</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              
+
                 <img src="/Asserts/tcs.jpeg" alt="TCS" class="h-16 object-contain">
                 <img src="/Asserts/infosys.png" alt="Infosys" class="h-16 object-contain">
                 <img src="/Asserts/all.png" alt="Allsec" class="h-16 object-contain">

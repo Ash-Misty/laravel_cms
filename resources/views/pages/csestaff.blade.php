@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="./Asserts/stafficon.jpg" type="image/jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSE Department Staff</title>
   <!-- Bootstrap CSS -->

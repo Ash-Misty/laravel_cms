@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="./Asserts/pharmaicon.jpg" type="image/jpg">
   <title>Department of Pharmaceutical Sciences</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -264,7 +265,7 @@
   <footer>
     <p>Links:
       <a href="/">Home</a>
-      <a href="/#departments">Department</a> 
+      <a href="/#departments">Department</a>
       <a href="/pharmastaff">Staff</a>
     </p>
   </footer>
